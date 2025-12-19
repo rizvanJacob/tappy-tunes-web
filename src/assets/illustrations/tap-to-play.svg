@@ -1,0 +1,25 @@
+<svg viewBox="0 0 420 240" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background -->
+  <rect width="420" height="240" rx="24" fill="#1A1A1A"/>
+
+  <!-- Phone -->
+  <rect x="90" y="40" width="160" height="160" rx="22" fill="#2A2A2A"/>
+  <rect x="105" y="55" width="130" height="130" rx="16" fill="#0F0F0F"/>
+
+  <!-- NFC waves -->
+  <path d="M260 120 q18 -18 36 0" stroke="#FFC857" stroke-width="4" fill="none"/>
+  <path d="M260 120 q28 -28 56 0" stroke="#FFC857" stroke-width="4" fill="none"/>
+
+  <!-- Card -->
+  <rect x="270" y="85" width="90" height="60" rx="12" fill="#C56B6B"/>
+  <circle cx="300" cy="115" r="10" fill="#FFF7EE"/>
+  <path d="M300 110 v-12" stroke="#FFF7EE" stroke-width="3"/>
+
+  <!-- Music notes -->
+  <g fill="#FFC857">
+    <circle cx="200" cy="60" r="6"/>
+    <path d="M200 60 v-22 h10 v22" />
+    <circle cx="230" cy="50" r="6"/>
+    <path d="M230 50 v-18 h10 v18" />
+  </g>
+</svg>
