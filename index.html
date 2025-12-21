@@ -4,55 +4,6 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>TappyTunes - Redirects</title>
-    <script>
-      // @ts-check
-      /**
-       * @typedef {Object} Redirect
-       * @property {string} title
-       * @property {string} subpath
-       * @property {string} url
-       */
-      /** @type {Redirect[]} */
-      const redirects = [
-        {
-          title: "TappyTunes",
-          subpath: "/",
-          url: "https://tappytunes.co",
-        },
-        {
-          title: "Closed Testing Feedback",
-          subpath: "/closed-testing-feedback",
-          url: "https://www.tappytunes.co/closed-testing-feedback",
-        },
-        {
-          title: "Page 2",
-          subpath: "/page-2",
-          url: "https://example.com/page-2",
-        },
-      ];
-
-      const normalizePath = (value) => value.replace(/\/+$/, "") || "/";
-      const currentPath = normalizePath(window.location.pathname);
-      const match = redirects.find(
-        (entry) => normalizePath(entry.subpath) === currentPath,
-      );
-      if (match) {
-        window.location.replace(match.url);
-      }
-
-      const list = document.querySelector("[data-redirect-list]");
-      if (list) {
-        list.innerHTML = "";
-        redirects.forEach((entry) => {
-          const item = document.createElement("li");
-          const link = document.createElement("a");
-          link.href = entry.url;
-          link.textContent = entry.title;
-          item.appendChild(link);
-          list.appendChild(item);
-        });
-      }
-    </script>
     <style>
       :root {
         color-scheme: light;
@@ -108,5 +59,54 @@
       </p>
       <ul data-redirect-list></ul>
     </div>
+    <script>
+      // @ts-check
+      /**
+       * @typedef {Object} Redirect
+       * @property {string} title
+       * @property {string} subpath
+       * @property {string} url
+       */
+      /** @type {Redirect[]} */
+      const redirects = [
+        {
+          title: "TappyTunes",
+          subpath: "/",
+          url: "https://tappytunes.co",
+        },
+        {
+          title: "Closed Testing Feedback",
+          subpath: "/closed-testing-feedback",
+          url: "https://www.tappytunes.co/closed-testing-feedback",
+        },
+        {
+          title: "Page 2",
+          subpath: "/page-2",
+          url: "https://example.com/page-2",
+        },
+      ];
+
+      const list = document.querySelector("[data-redirect-list]");
+      if (list) {
+        list.innerHTML = "";
+        redirects.forEach((entry) => {
+          const item = document.createElement("li");
+          const link = document.createElement("a");
+          link.href = entry.url;
+          link.textContent = entry.title;
+          item.appendChild(link);
+          list.appendChild(item);
+        });
+      }
+
+      const normalizePath = (value) => value.replace(/\/+$/, "") || "/";
+      const currentPath = normalizePath(window.location.pathname);
+      const match = redirects.find(
+        (entry) => normalizePath(entry.subpath) === currentPath,
+      );
+      if (match) {
+        window.location.replace(match.url);
+      }
+    </script>
   </body>
 </html>
