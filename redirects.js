@@ -24,7 +24,8 @@ const redirects = [
   },
 ];
 
-const normalizePath = (value) => value.replace(/\/+$/, "") || "/";
+const normalizePath = (/** @type {string} */ value) =>
+  value.replace(/\/+$/, "") || "/";
 const currentPath = normalizePath(window.location.pathname);
 const pathDepth = currentPath.split("/").filter(Boolean).length;
 const normalizedRedirects = redirects.map((entry) => ({
