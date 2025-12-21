@@ -1,0 +1,107 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Tappy Tunes - Links</title>
+    <script>
+      // @ts-check
+      /**
+       * @typedef {Object} Redirect
+       * @property {string} title
+       * @property {string} subpath
+       * @property {string} url
+       */
+      /** @type {Redirect[]} */
+      const redirects = [
+        {
+          title: "Page 1",
+          subpath: "/page-1",
+          url: "https://example.com/page-1",
+        },
+        {
+          title: "Page 2",
+          subpath: "/page-2",
+          url: "https://example.com/page-2",
+        },
+      ];
+
+      const normalizePath = (value) => value.replace(/\/+$/, "") || "/";
+      const currentPath = normalizePath(window.location.pathname);
+      const match = redirects.find(
+        (entry) => normalizePath(entry.subpath) === currentPath,
+      );
+      if (match) {
+        window.location.replace(match.url);
+      }
+
+      const list = document.querySelector("[data-redirect-list]");
+      if (list) {
+        list.innerHTML = "";
+        redirects.forEach((entry) => {
+          const item = document.createElement("li");
+          const link = document.createElement("a");
+          link.href = entry.url;
+          link.textContent = entry.title;
+          item.appendChild(link);
+          list.appendChild(item);
+        });
+      }
+    </script>
+    <style>
+      :root {
+        color-scheme: light;
+      }
+      body {
+        font-family: "Georgia", "Times New Roman", serif;
+        margin: 0;
+        padding: 48px 24px;
+        background: #f7f3eb;
+        color: #2d2a26;
+      }
+      .wrap {
+        max-width: 720px;
+        margin: 0 auto;
+      }
+      h1 {
+        font-size: 32px;
+        margin: 0 0 16px;
+        letter-spacing: 0.5px;
+      }
+      p {
+        margin: 0 0 20px;
+        line-height: 1.6;
+      }
+      ul {
+        list-style: none;
+        padding: 0;
+        margin: 24px 0 0;
+      }
+      li + li {
+        margin-top: 12px;
+      }
+      a {
+        color: #2d2a26;
+        text-decoration: none;
+        border-bottom: 2px solid #d1b989;
+        padding-bottom: 2px;
+      }
+      a:hover {
+        border-bottom-color: #8b6d3b;
+      }
+      .note {
+        font-size: 14px;
+        opacity: 0.8;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="wrap">
+      <h1>Tappy Tunes Redirect Helper</h1>
+      <p>
+        If you are not redirected automatically, please choose a link below.
+      </p>
+      <ul data-redirect-list></ul>
+    </div>
+  </body>
+</html>
