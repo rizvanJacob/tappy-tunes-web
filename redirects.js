@@ -42,6 +42,10 @@ const match = normalizedRedirects
   .sort((a, b) => b.subpath.length - a.subpath.length)[0];
 
 if (match) {
+  const title = document.querySelector("[data-redirect-title]");
+  if (title) {
+    title.textContent = match.entry.title;
+  }
   window.location.replace(match.entry.url);
 }
 
