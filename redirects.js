@@ -18,9 +18,14 @@ const redirects = [
     url: "https://www.tappytunes.co/closed-testing-feedback",
   },
   {
-    title: "Ntag213 Shoppee Linke",
-    subpath: "/nfc-tag-shoppee-1",
+    title: "Ntag213 Shoppee (Singapore) Link",
+    subpath: "/nfc-tag-shoppee-sg1",
     url: "https://sg.shp.ee/GZbLv4m",
+  },
+  {
+    title: "Ntag213 Lazada (Singapore) Link",
+    subpath: "/nfc-tag-lazada-sg1",
+    url: "https://www.lazada.sg/products/sg-510pcs-ntag-213-215-216-label-stickers-nfc-rfid-tags-label-universal-reader-label-digital-name-card-website-i325918971-s20840532167.html?",
   },
 ];
 
