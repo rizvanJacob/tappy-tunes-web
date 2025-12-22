@@ -18,9 +18,9 @@ const redirects = [
     url: "https://www.tappytunes.co/closed-testing-feedback",
   },
   {
-    title: "Page 2",
-    subpath: "/page-2",
-    url: "https://example.com/page-2",
+    title: "Ntag213 Shoppee Linke",
+    subpath: "/nfc-tag-shoppee-1",
+    url: "https://sg.shp.ee/GZbLv4m",
   },
 ];
 
