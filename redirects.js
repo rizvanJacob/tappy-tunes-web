@@ -18,6 +18,11 @@ const redirects = [
     url: "https://www.tappytunes.co/closed-testing-feedback",
   },
   {
+    title: "TappyTiles Starter Kit Order Form",
+    subpath: "/starter-kit-order-form",
+    url: "https://www.tappytunes.co/starter-kit-order-form",
+  },
+  {
     title: "Ntag213 Shoppee (Singapore) Link",
     subpath: "/nfc-tag-shoppee-sg1",
     url: "https://sg.shp.ee/GZbLv4m",
