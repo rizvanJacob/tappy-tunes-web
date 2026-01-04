@@ -20,7 +20,7 @@ const redirects = [
   {
     title: "TappyTiles Starter Kit Order Form",
     subpath: "/starter-kit-order-form",
-    url: "https://www.tappytunes.co/starter-kit-order-form",
+    url: "https://www.tappytunes.myshopify.com/products/tappytiles-starter-pack",
   },
   {
     title: "Ntag213 Shoppee (Singapore) Link",
